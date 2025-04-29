@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="zh">
+<html lang="en">
+<html lang="Fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYMX Overseas Study Consulting Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 0;
+            background-color: #1a3e8c;
+            color: white;
+            border-radius: 10px;
+            position: relative;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 15px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1a3e8c;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        h1 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .slogan {
+            font-style: italic;
+            opacity: 0.9;
+        }
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .language-selector select {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        .language-selector select option {
+            background-color: #1a3e8c;
+            color: white;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .nav-btn {
+            padding: 10px 20px;
+            background-color: #1a3e8c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .nav-btn:hover {
+            background-color: #2c58b0;
+        }
+        
+        .section {
+            display: none;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .section.active {
+            display: block;
+        }
+        h2 {
+            color: #1a3e8c;
+            margin-bottom: 15px;
+            font-size: 24px;
+            border-bottom: 2px solid #1a3e8c;
+            padding-bottom: 5px;
+        }
+        
+        .about-text {
+            margin-bottom: 15px;
+        }
+        .team-stats {
+            font-weight: bold;
+            color: #1a3e8c;
+            margin: 20px 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .service-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .service-img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .service-info {
+            padding: 15px;
+        }
+        .service-info h3 {
+            color: #1a3e8c;
+            margin-bottom: 10px;
+        }
+        
+        .address-section {
+            margin-top: 30px;
+        }
+        .address-card {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .address-text {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .address-icon {
+            color: #1a3e8c;
+            font-size: 20px;
+        }
+        #map {
+            height: 300px;
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        
+        /* Table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #1a3e8c;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Scholarship info boxes */
+        .scholarship-info {
+            background-color: #f0f7ff;
+            padding: 1.5rem;
+            border-left: 4px solid #2c58b0;
+            margin: 1.5rem 0;
+        }
+        
+        /* Program list with scrolling */
+        .program-list {
+            overflow-x: auto;
+        }
+        
+        /* FAQ items */
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #1a3e8c;
+            margin-bottom: 5px;
+        }
+        
+        /* Hours card */
+        .hours-card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Contact info */
+        #contact-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        #contact-text p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+
+        #contact-text a {
+            color: #1a3e8c;
+            text-decoration: none;
+        }
+
+        .hours-title {
+            font-weight: bold;
+            color: #1a3e8c;
+            margin-bottom: 5px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #666;
+            font-size: 14px;
+            background-color: #1a3e8c;
+            color: white;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .nav-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">HYMX</div>
+            <h1>HYMX OVERSEAS STUDY CONSULTING COMPANY</h1>
+            <p class="slogan">Your Bridge to Education in China</p>
+            <div class="language-selector">
+                <select>
+                    <option value="en">English</option>
+                    <option value="fr">Français</option>
+                    <option value="zh">中文</option>
+                </select>
+            </div>
+        </header>
+        
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="showSection('home')">Home</button>
+            <button class="nav-btn" onclick="showSection('company')">Company</button>
+            <button class="nav-btn" onclick="showSection('university')">CTGU</button>
+            <button class="nav-btn" onclick="showSection('scholarships')">Scholarships</button>
+            <button class="nav-btn" onclick="showSection('programs')">Programs</button>
+            <button class="nav-btn" onclick="showSection('application')">Application</button>
+            <button class="nav-btn" onclick="showSection('faq')">FAQ</button>
+        </div>
+        
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <h2>Discover Yichang</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="Dam.png" alt="Three Gorges Dam" class="service-img">
+                    <div class="service-info">
+                        <h3>Three Gorges Dam</h3>
+                        <p>World's largest power station in terms of installed capacity, a modern engineering marvel located near Yichang.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="yangtze.png" alt="Yangtze River" class="service-img">
+                    <div class="service-info">
+                        <h3>Yangtze River</h3>
+                        <p>The longest river in Asia flowing through Yichang, offering breathtaking cruises through the Three Gorges.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="shennong.png" alt="Shennong Stream" class="service-img">
+                    <div class="service-info">
+                        <h3>Shennong Stream</h3>
+                        <p>Crystal-clear waters surrounded by majestic cliffs and lush vegetation in the Yichang region.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="unvers.png" alt="Yichang City" class="service-img">
+                    <div class="service-info">
+                        <h3>Yichang City</h3>
+                        <p>Beautiful riverside city known for its stunning natural scenery and rich culture, home to CTGU.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hours-card">
+                <p class="hours-title">OPENING HOURS:</p>
+                <p>9:00 AM - 6:00 PM Monday-Saturday</p>
+                <p>Our support team is available to answer your study abroad queries.</p>
+                <a href="tel:+86 1660 7202 129" style="display: inline-block; background-color: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-top: 10px;">CONTACT US</a>
+            </div>
+        </section>
+        
+        <!-- Company Section -->
+        <section id="company" class="section">
+            <h2>Company Introduction</h2>
+            <div class="about-text">
+                <p>Founded in the bright spring of March 2024, our company is a leading provider of overseas education consulting services, built by a group of outstanding students from China Three Gorges University who are full of dreams and enthusiasm. Under the careful guidance of experienced teachers, we have gathered the vitality of youth and professional wisdom, committed to becoming a bridge connecting education worldwide and in China.</p>
+                
+                <p>Since our inception, we have received widespread recognition and strong support from the college, university, and even all sectors of society. This support has not only given us the strength to move forward, but also allowed us to accumulate rich experience and profound expertise in the field of overseas education consulting.</p>
+                
+                <p>We specialize in providing foreign students with one-stop solutions for studying in China. Whether you aspire to pursue higher academic qualifications in the halls of academia, have a deep interest in the profound Chinese culture, or envision fulfilling your future dreams on this fertile land of China, we will serve you wholeheartedly.</p>
+            </div>
+            
+            <h3>Our Services</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="visa.png" alt="Visa Assistance" class="service-img">
+                    <div class="service-info">
+                        <h3>Visa Application</h3>
+                        <p>Comprehensive guidance through the entire Chinese student visa application process.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="placement.png" alt="University Placement" class="service-img">
+                    <div class="service-info">
+                        <h3>University Placement</h3>
+                        <p>Expert advice and placement services for China Three Gorges University programs.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="scholarship-support.png" alt="Scholarship Guidance" class="service-img">
+                    <div class="service-info">
+                        <h3>Scholarship Guidance</h3>
+                        <p>Assistance with Chinese Government and CTGU scholarship applications.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="Acco.png" alt="Accommodation" class="service-img">
+                    <div class="service-info">
+                        <h3>Accommodation</h3>
+                        <p>Help with finding and securing student housing in Yichang.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="address-section">
+                <h3>Our Location</h3>
+                <div class="address-card">
+                    <div class="address-text">
+                        <span class="address-icon">📍</span>
+                        <p>China Three Gorges University, 8 University Road, Yichang, Hubei</p>
+                    </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3429.925789775783!2d111.31555207570318!3d30.72048658622412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x36839a9c4ded3699%3A0x80ff75a7634c4e53!2sChina%20Three%20Gorges%20University!5e0!3m2!1sen!2sus!4v1620000000000!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+        
+        <section id="university" class="section">
+            <h2>China Three Gorges University (CTGU)</h2>
+            <div class="about-text">
+                <p>China Three Gorges University (CTGU) is located in Yichang city, Hubei Province, China. Having been approved by the Ministry of Education of China, CTGU comprises the former Wuhan University of Hydraulic and Electric Engineering/Yichang and the former Hubei Sanxia College. The history of CTGU can be traced back to 1923. The undergraduate education started from 1978, the postgraduate education and international education started from 1996.</p>
+                
+                <p>CTGU has the qualification to confer the doctor's degree, to accept international students under Chinese government scholarship from China Scholarship Council(CSC), and to accept international students into undergraduate English medium program of Bachelor of Medicine and Bachelor of Surgery (MBBS) and to accept Chinese students from Hong Kong, Macao, Taiwan and other countries in the world.</p>
+                
+                <p>CTGU, adhering to the principle of promoting development through opening up, organizes wide range of international cooperation and communication. It is the member of United Nations Academic Impact (UNAI) and the Standing Secretariat of Global University Network(N.E.W.S). CTGU has established cooperative relationships with more than 170 universities from more than 60 countries, CTGU, with 1400 international students currently, is a major destination in Hubei Province for international students and provides the largest scale of English medium education activities.</p>
+            </div>
+            
+            <h3>Campus Life</h3>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="Campus.svs.jpg" alt="Campus" class="service-img">
+                    <div class="service-info">
+                        <h3>Beautiful Campus</h3>
+                        <p>Modern facilities surrounded by scenic views of the Yangtze River and Three Gorges region.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="library.png" alt="Library" class="service-img">
+                    <div class="service-info">
+                        <h3>Advanced Library</h3>
+                        <p>State-of-the-art library with extensive academic resources for all programs.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="dorm.png" alt="Dormitory" class="service-img">
+                    <div class="service-info">
+                        <h3>Student Housing</h3>
+                        <p>Comfortable dormitories with all necessary amenities for international students.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="sport.png" alt="Sports" class="service-img">
+                    <div class="service-info">
+                        <h3>Sports Facilities</h3>
+                        <p>Comprehensive sports complex including gym, swimming pool, and various courts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <section id="scholarships" class="section">
+            <h2>Scholarships</h2>
+            
+            <div class="scholarship-info">
+                <h3>Chinese Government Scholarship</h3>
+                <p><strong>Brief Introduction:</strong></p>
+                <p>China Scholarship Council (hereinafter referred to as CSC),entrusted by the Ministry of Education of the People's Republic of China(hereinafter referred to as MOE), is responsible for the enrollment and the administration of Chinese Government Scholarship programs. China Three Gorges University is one of the authorized universities to accept the CSC full scholarship students. We welcome all the international students to participate in these programs.</p>
+                
+                <p><strong>Types:</strong></p>
+                <p>①Type A: Bilateral Program of Chinese Government Scholarship</p>
+                <p>Bilateral Program includes a full or partial scholarship established by MOE in accordance with educational exchange agreements or consensus between Chinese government and governments of other countries, institutions, universities or international organizations. Please apply directly to the dispatching authorities for overseas study of your home country. Programs List: please download from CTGU English website: <a href="https://eng.ctgu.edu.cn/info/1033/1963.htm" target="_blank">https://eng.ctgu.edu.cn/info/1033/1963.htm</a></p>
+                
+                <p>②Type B:Chinese University Program of Chinese Government Scholarship:</p>
+                <p>1)2024/2025 Application Guide for CTGU High Level Postgraduate Program Sponsored by China Scholarship Council(CSC), please visit: <a href="https://eng.ctgu.edu.cn/info/1033/1966.htm" target="_blank">https://eng.ctgu.edu.cn/info/1033/1966.htm</a></p>
+                <p>2)2024/2025 CTGU Chinese Government Scholarship Silk Road Program, please visit: <a href="https://eng.ctgu.edu.cn/info/1033/1972.htm" target="_blank">https://eng.ctgu.edu.cn/info/1033/1972.htm</a></p>
+                
+                <p><strong>Coverage:</strong></p>
+                <ul>
+                    <li>Tuition fees</li>
+                    <li>Accommodation fees (personal expenses such as water, electricity, internet, TV signal, damage compensation, etc.are excluded)</li>
+                    <li>Insurance</li>
+                    <li>Stipend for degree program (Bachelor: 2,500RMB/month; Master:3,000RMB/month; PhD: 3,500RMB/month)</li>
+                </ul>
+            </div>
+            
+            <div class="scholarship-info">
+                <h3>Hubei Provincial Scholarship Programs</h3>
+                <p>"Hubei Provincial Scholarship" is established by Hubei Provincial Government, with a goal of encouraging more international students to study or do scientific research in Hubei provincial higher education institutes. With the approval of Hubei provincial government and Hubei Provincial Department of Education, China Three Gorges University(CTGU) recruits "Hubei Provincial Scholarship International Student" from all over the world to study or do research in CTGU.</p>
+                <p>For more information, please visit: <a href="https://eng.ctgu.edu.cn/info/1053/1982.htm" target="_blank">https://eng.ctgu.edu.cn/info/1053/1982.htm</a></p>
+            </div>
+            
+            <h3>CTGU Scholarship Programs</h3>
+            <p>To encourage more international students to study in China Three Gorges University, President Scholarship and College Scholarship are offered to new students, which covers full tuition fee or partial tuition fee with similar criteria as Hubei Provincial Scholarship; other regular fees shall be paid by students according to the university fees structure. From the second year, CTGU and the relevant colleges will offer some scholarships to excellent students according to their comprehensive ranking among all students. For detailed information on the scholarship, please refer to the relevant scholarship regulations.</p>
+            
+            <h3>Why Would You Choose CTGU?</h3>
+            <ul>
+                <li>be a citizen of a country other than the PRC, friendly to China and in good health both mentally and physically;</li>
+                <li>   Note: For those Chinese people who immigrated to other countries as foreign students to apply for studying in China, the applicants should hold the valid foreign passport or nationality certificate more than 4 years. In the latest 4 years (up to April 30 of the enrollment year), the applicants lived in a foreign country more than 2 years (the actual living abroad for more than 9 months in a year can be counted as one year, subject to the entry and exit stamps).</li>
+                <li>be an academically excellent holder of a Higher Secondary Certificate or its equivalent between the age of 18 and 25 when applying for a Bachelor's program;</li>
+                <li>be an academically excellent holder of a Bachelor's degree in relevant discipline or its equivalent between the age of 18 and 30 when applying for a Master's program;</li>
+                <li>be an academically excellent holder of a Master's degree in relevant discipline or its equivalent between the age of 18 and 35 when applying for a doctoral program;</li>
+                <li>be an academically excellent holder of a Higher Secondary Certificate or above between the age of 18 and 40 when applying for general visiting program;</li>
+                <li>have passed HSK (Level 4) when applying for a Chinese taught program (General Visiting Program is excluded) and their Chinese proficiency should be at the level of the International Chinese Language Proficiency Standard (Level 5)upon graduation (those who have obtained a degree from a Chinese university using Chinese as the teaching language are not required to provide HSK certificates;</li>
+                <li>provide an IELTS certificate with 6.0 or above or other equivalent language proficiency certificate when applying for an English taught program. Applicants who are from English speaking countries or received education more than 3 years in English can exempt from providing the relevant English language proficiency certificates. Please refer to <a href="http://eng.ctgu.edu.cn/info/1032/1465.htm" target="_blank">http://eng.ctgu.edu.cn/info/1032/1465.htm</a> for a list of English Speaking Countries. Their Chinese proficiency should be at the level of the International Chinese Language Proficiency Standard (Level 3) upon graduation.</li>
+                <li>provide the Certificate for the Experience of Studying in China from previous school or university if he/she who has studied in China. Sample of the Certificate can be downloaded from <a href="http://eng.ctgu.edu.cn/DOWNLOADS.htm" target="_blank">http://eng.ctgu.edu.cn/DOWNLOADS.htm</a></li>
+            </ul>
+        </section>
+        
+    
+        <section id="programs" class="section">
+            <h2>CTGU Programs for International Students</h2>
+            
+            <h3>Undergraduate Programs</h3>
+            <div class="program-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sort</th>
+                            <th>College</th>
+                            <th>Major(English)</th>
+                            <th>Duration(Year)</th>
+                            <th>Tuition(RMB/Year)</th>
+                            <th>Language Instruction</th>
+                            <th>Type of Scholarship</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>College of Hydraulic & Environmental Engineering</td>
+                            <td>Hydraulic &Water Resources Engineering</td>
+                            <td>4</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial/CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>College of Civil Engineering &Architecture</td>
+                            <td>Civil Engineering</td>
+                            <td>4</td>
+                            <td>15,000</td>
+                            <td>English/Chinese>HSK4</td>
+                            <td>CSC/Hubei Provincial/CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>College of Electrical Engineering &New Energy</td>
+                            <td>Electrical Engineering and Automation</td>
+                            <td>4</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial/CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>College of Electrical Engineering &New Energy</td>
+                            <td>Automation</td>
+                            <td>4</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial/CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>College of Electrical Engineering &New Energy</td>
+                            <td>Electrical Engineering and Automation (Direction of Power Transmission and Transformation Engineering Construction)</td>
+                            <td>4</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial/CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>College of Mechanical & Power Engineering</td>
+                            <td>Mechanical Design, Manufacturing &Automation</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>College of Materials and Chemical Engineering</td>
+                            <td>New Energy Materials and Devices</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>College of Computer and Information Technology</td>
+                            <td>Computer Science and Technology</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>College of Medicine and Health Sciences</td>
+                            <td>Nursing</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>College of Medicine and Health Sciences</td>
+                            <td>Nursing</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>ChineseZ HSK4</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>School of Literature and Media</td>
+                            <td>Teaching Chinese to Speakers of Other Languages</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>Chinese</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>School of Literature and Media</td>
+                            <td>Chinese Language and Literature</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>Chinese</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>School of Literature and Media</td>
+                            <td>Radio and Television</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>Chinese</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>College of Science</td>
+                            <td>Mathematics</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>College of Science</td>
+                            <td>Physics</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial/CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>College of Biological and Pharmaceutical Sciences</td>
+                            <td>Pharmacy</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>School of Foreign Studies</td>
+                            <td>English(International Communication and Technology)</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>College of Physical Education</td>
+                            <td>Sports Education</td>
+                            <td>4</td>
+                            <td>10,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>College of Medicine and HealthSciences</td>
+                            <td>Traditional Chinese Medicine</td>
+                            <td>5</td>
+                            <td>10,000</td>
+                            <td>Chinese HSK4</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3>Postgraduate Programs</h3>
+            <div class="program-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Sort</th>
+                            <th>College</th>
+                            <th>Major (English)</th>
+                            <th>Duration (Year)</th>
+                            <th>Tuition (RMB/Year)</th>
+                            <th>Language of Instruction</th>
+                            <th>Type of Scholarship</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>College of Civil Engineering & Architecture</td>
+                            <td>Civil Engineering</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>CSC/Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>College of Civil Engineering & Architecture</td>
+                            <td>Geological Resources and Geological Engineering</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>CSC/Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>College of Civil Engineering & Architecture</td>
+                            <td>Architecture</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>CSC/Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>College of Mechanical & Power Engineering</td>
+                            <td>Mechanical Engineering</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>College of Materials and Chemical Engineering</td>
+                            <td>Materials Science and Engineering</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>College of Materials and Chemical Engineering</td>
+                            <td>Material and Chemical Industry</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>College of Electrical Engineering & New Energy</td>
+                            <td>Electrical Engineering</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>CSC/Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>College of Electrical Engineering & New Energy</td>
+                            <td>Control Science and Engineering</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>CSC/Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>College of Medicine and Health Sciences</td>
+                            <td>Nursing</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>Chinese≥HSK4</td>
+                            <td>Hubei Provincial ICTGU</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>College of Medicine and Health Sciences</td>
+                            <td>Nursing</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>College of Medicine and Health Sciences</td>
+                            <td>Traditional Chinese Medicine</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>Chinese</td>
+                            <td>Hubei Provincial CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>School of Literature and Media</td>
+                            <td>Teaching Chinese to Speakers of Other Languages</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>Chinese</td>
+                            <td>Hubei Provincial ICTGU</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>School of Literature and Media</td>
+                            <td>Chinese Language and Literature</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>Chinese</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>School of Literature and Media</td>
+                            <td>Journalism and Communication</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>Chinese</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>College of Science</td>
+                            <td>Mathematics</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>College of Science</td>
+                            <td>Physics</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>College of Physical Education</td>
+                            <td>Sports</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>School of Foreign Studies</td>
+                            <td>International&Regional Studies</td>
+                            <td>2</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>19</td>
+                            <td>College of Economics and Management</td>
+                            <td>Business Administration (MBA)</td>
+                            <td>2</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td>School of Law and Public Administration</td>
+                            <td>Public Administration</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial</td>
+                        </tr>
+                        <tr>
+                            <td>21</td>
+                            <td>College of Basic Medical Sciences</td>
+                            <td>Clinical Medicine</td>
+                            <td>3</td>
+                            <td>23,000</td>
+                            <td>English & Chinese</td>
+                            <td>Hubei Provincial</td>
+                        </tr>
+                        <tr>
+                            <td>22</td>
+                            <td>College of Biological and Pharmaceutical Sciences</td>
+                            <td>Chemistry</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Hubei Provincial /CTGU</td>
+                        </tr>
+                        <tr>
+                            <td>23</td>
+                            <td>College of Biological and Pharmaceutical Sciences</td>
+                            <td>Ecology</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td>Self sponsored</td>
+                        </tr>
+                        <tr>
+                            <td>24</td>
+                            <td>College of Biological and Pharmaceutical Sciences</td>
+                            <td>Biology and Medicine</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>25</td>
+                            <td>College of Biological and Pharmaceutical Sciences</td>
+                            <td>Pharmacy</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>26</td>
+                            <td>College of Biological and Pharmaceutical Sciences</td>
+                            <td>Biology</td>
+                            <td>3</td>
+                            <td>15,000</td>
+                            <td>English</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        
+        <section id="application" class="section">
+            <h2>How Can You Be A CTGUer?</h2>
+            <div class="about-text">
+                <p>Register and submit your application at China Three Gorges University Online Application System for International Students: <a href="http://1sx.ctgu.edu.cn" target="_blank">http://1sx.ctgu.edu.cn</a></p>;
+                <p>If you apply for the Chinese Government Scholarship or International Chinese Language Teachers Scholarship (ICLTS), you need to submit your application at relevant system accordingly. Application system for CSC scholarship: <a href="http://studyinchina.csc.edu.cn" target="_blank">http://studyinchina.csc.edu.cn</a>;</p>
+                
+                <p>Agency number of CTGU:11075;</p>
+                <P>Application system for ICLTS scholarship: <a href="http://cis.chinese.cn/account/login" target="_blank">http://cis.chinese.cn/account/login</a>;</p>
+                
+                <p>The admissions office shall make a preliminary examination of the applicant's materials. Those documents of the applicants who have passed the preliminary examination shall be sent to relevant colleges for academic review.</p>
+                
+                <p>The Admissions office will submit the documents of the applicants who have passed the college academic review to China Scholarship Council or Center for Language Education and Cooperation or Department of Education of Hubei Province for a comprehensive review;</p>
+                
+                <p>The Admissions office will submit the materials of the applicants who have passed the comprehensive review for system checking and issuing the electronic version of Information Form for Foreign Students'Short term Visit(DQ Form)or Confirmation Form for Study in China (JW201/JW202 Form);</p>
+                
+                <p>The Admissions Office will send the admission documents to applicants.</p>
+            </div>
+            
+            <h3>The Things You Need Take For Your Study</h3>
+            <ul>
+                <li>CTGU or CSC or ICLTS Application Form for International Students(filled in online)</li>
+                <li>Assanned copy of the Passport Information Page.</li>
+                <li>Diploma and certificate of highest education (both original &notarized photocopy).An applicant who is a current university student shall submit the certificate of expected graduation or student status issued by his/her university.</li>
+                <li>Academic transcripts of the final degree. Transcripts in languages other than Chinese or English shall be attached with notarized translations in Chinese or English.</li>
+                <li>Certificate of language proficiency. When applying for a Chinese taught program,an applicant shall provide a valid HSK score report that meets the program's language ability requirements. When applying for a program taught in a language other than Chinese,an applicant shall provide a certificate of proficiency in the language as required by the designated university,such as the IELTS or TOEFLtest report.</li>
+                <li>A study or research plan written in Chinese or in English (no less than 1000 words/characters for postgraduates)when applying for the postgraduate programs.</li>
+                <li>Recommendation letters. Two recommendation letters in Chinese or in English from professors or associate professors when applying for the postgraduate programs.</li>
+                <li>Personal academic achievements if there is/are (list of graduation thesis,published papers,major research projects participated, etc.).</li>
+                <li>Awarded certificates if there is/are.</li>
+                <li>A photocopy of the Foreigner Physical Examination Form (the original document,printed by Chinesequarantine authorities, shall be filled in English and kept by the applicant).The medical examinations must cover all the items listed in the Foreigner Physical Examination Form,Incomplete records or those without the signature of the attending physician,the official stamp of the hospital,or a sealed photograph of the applicant are invalid. Medical examination results are valid for only six months.</li>
+                <li>An applicant shall submit a valid Certificate of Non-Criminal Record (or Police Clearance Certificate)issuedby the local public security(such as the police station),usually issued within six months prior to the submission date of the application Attention:The online application for CTGU platform requires JPG or JPEG or PNG uploads of all the documents within 1 M.</li>
+            </ul>
+            
+            <h3>The Fee You Maybe Pay For Your Living</h3>
+            <ul>
+                <li>Tuition fee: please refer to the different programs.</li>
+                <li>Accommodation fee: 4800 RMB syeai/bed for a room with two beds (Personal expenses such as water, electricity, internet,and damage compensation are excluded.Note: From the ist to the 5tl of any mont upon arrival,the payment for living accommodations is due i fullfor the month, From the 16th to the end of the month,payment is one half for tie first month. The living accommodations atre paid on a yearly basis.</li>
+                <li>Insurance fee: 800 RMB/600RMB/year/person 74 Registration fee: 400 RMB/ person.</li>
+                <li>Living expenses average around 1500RMB/month/person.</li>
+                <li>Other prospective expenses around 1500 RMB such as Health Check/ Authentication fee or Residence Peumit Application Fee will be charged by the relevant institutions in accordance with their fee.</li>
+            </ul>
+        </section>
+        
+       
+        <section id="faq" class="section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Why should I choose HYMX Overseas Study Consulting Company?</div>
+                <p>We specialize in helping international students navigate the complex process of studying in China, with particular expertise in China Three Gorges University programs. Our team consists of current CTGU students who understand both the academic requirements and the student experience.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What makes China Three Gorges University special?</div>
+                <p>CTGU is located in the beautiful city of Yichang near the Three Gorges Dam, offering unique programs in hydraulic engineering and other technical fields. The university has strong international partnerships and offers many programs in English.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How competitive are the scholarships?</div>
+                <p>Chinese Government Scholarships are competitive but attainable with proper preparation. Our consultants can help you prepare the strongest possible application to maximize your chances of receiving funding.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What is the cost of living in Yichang?</div>
+                <p>Yichang offers a very affordable cost of living compared to larger Chinese cities. Students typically need about 1500-2000 RMB per month for basic expenses including food, transportation, and personal items.</p>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do I need to know Chinese to study at CTGU?</div>
+                <p>Many programs are offered in English, though basic Chinese skills will enhance your experience. For Chinese-taught programs, HSK level 4 is typically required. We can help you find appropriate language preparation resources.</p>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2024 HYMX Overseas Study Consulting Company. All rights reserved.</p>
+            <p>Contact: info@hymx-education.com | China Three Gorges University, Yichang, Hubei</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('home');
+        });
+    </script>
+</body>
+</html>
